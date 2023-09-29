@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sarak"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-27 03:39:30 AM"/>
+        <attribute name="created" value="c2FyYWs7U0FSQTsyMDIzLTA5LTI3OzAzOjIyOjMwIEFNOzIwODk="/>
+        <attribute name="edited" value="c2FyYWs7U0FSQTsyMDIzLTA5LTI3OzAzOjM5OjMwIEFNOzE7MjIwNQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Exam1" type="Real" array="False" size=""/>
+            <declare name="Exam2" type="Real" array="False" size=""/>
+            <declare name="Exam1Weighted" type="Real" array="False" size=""/>
+            <declare name="Exam2Weighted" type="Integer" array="False" size=""/>
+            <declare name="TotalScore" type="Integer" array="False" size=""/>
+            <input variable="Exam1"/>
+            <input variable="Exam2"/>
+            <assign variable="Exam1Weighted" expression="Exam1 * 0.60"/>
+            <assign variable="Exam2Weighted" expression="Exam2 * 0.40"/>
+            <assign variable="TotalScore" expression="Exam1Weighted + Exam2Weighted"/>
+            <output expression="TotalScore" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

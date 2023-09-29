@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sarak"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-28 11:34:58 PM"/>
+        <attribute name="created" value="c2FyYWs7U0FSQTsyMDIzLTA5LTI3OzAzOjM5OjM2IEFNOzIxMDM="/>
+        <attribute name="edited" value="c2FyYWs7U0FSQTsyMDIzLTA5LTI4OzExOjM0OjU4IFBNOzI7MjIyNg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="FirstName" type="String" array="False" size=""/>
+            <declare name="numofsteps" type="Integer" array="False" size=""/>
+            <declare name="calsburned" type="Real" array="False" size=""/>
+            <input variable="FirstName"/>
+            <input variable="numofsteps"/>
+            <input variable="calsburned"/>
+            <output expression="&quot;Enter First Name: &quot; &amp; FirstName" newline="True"/>
+            <output expression="&quot;Enter Number of Steps Walked: &quot; &amp; numofsteps" newline="True"/>
+            <assign variable="calsburned" expression="numofsteps * 0.25"/>
+            <output expression="&quot;Enter Calories Burned: &quot; &amp; calsburned" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

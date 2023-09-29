@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sarak"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-28 10:25:33 PM"/>
+        <attribute name="created" value="c2FyYWs7U0FSQTsyMDIzLTA5LTI3OzAzOjQyOjAxIEFNOzIwODk="/>
+        <attribute name="edited" value="c2FyYWs7U0FSQTsyMDIzLTA5LTI4OzEwOjI1OjMzIFBNOzY7MjIyMg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="pppshr" type="Real" array="False" size=""/>
+            <declare name="crntstkprc" type="Real" array="False" size=""/>
+            <declare name="qtyofstk" type="Real" array="False" size=""/>
+            <declare name="value" type="Real" array="False" size=""/>
+            <input variable="pppshr"/>
+            <input variable="crntstkprc"/>
+            <input variable="qtyofstk"/>
+            <assign variable="value" expression="(crntstkprc - pppshr) * qtyofstk"/>
+            <output expression="value" newline="True"/>
+            <if expression="value &lt; 0">
+                <then>
+                    <output expression="&quot;You are experiencing a loss.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;You are experiencing a gain.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

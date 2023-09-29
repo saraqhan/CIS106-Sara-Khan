@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sarak"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-29 12:04:59 AM"/>
+        <attribute name="created" value="c2FyYWs7U0FSQTsyMDIzLTA5LTI4OzExOjM1OjA0IFBNOzIxMDk="/>
+        <attribute name="edited" value="c2FyYWs7U0FSQTsyMDIzLTA5LTI5OzEyOjA0OjU5IEFNOzI7MjIxMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="fixedcosts" type="Real" array="False" size=""/>
+            <declare name="pperunit" type="Real" array="False" size=""/>
+            <declare name="cpu" type="Real" array="False" size=""/>
+            <declare name="brkevenpnt" type="Real" array="False" size=""/>
+            <input variable="fixedcosts"/>
+            <input variable="pperunit"/>
+            <input variable="cpu"/>
+            <assign variable="brkevenpnt" expression="fixedcosts / (pperunit - cpu)"/>
+            <output expression="&quot;Break Even Point: &quot; &amp; brkevenpnt" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
