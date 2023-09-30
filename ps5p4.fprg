@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sarak"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-30 08:15:32 AM"/>
+        <attribute name="created" value="c2FyYWs7U0FSQTsyMDIzLTA5LTMwOzA4OjA0OjU5IEFNOzIwOTk="/>
+        <attribute name="edited" value="c2FyYWs7U0FSQTsyMDIzLTA5LTMwOzA4OjE1OjMyIEFNOzI7MjIwMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="appname" type="String" array="False" size=""/>
+            <declare name="appcst" type="Real" array="False" size=""/>
+            <declare name="wrrcst" type="Real" array="False" size=""/>
+            <declare name="ttl" type="Real" array="False" size=""/>
+            <input variable="appname"/>
+            <input variable="appcst"/>
+            <input variable="wrrcst"/>
+            <if expression="appcst &gt; 1000">
+                <then>
+                    <assign variable="wrrcst" expression="0.10 * appcst / 10% wrrcst"/>
+                </then>
+                <else>
+                    <assign variable="wrrcst" expression="0.05 * appcst / 5% wrrcst"/>
+                </else>
+            </if>
+            <assign variable="ttl" expression="appcst + wrrcst"/>
+            <output expression="&quot;Application Name: &quot; &amp; appname" newline="True"/>
+            <output expression="&quot;Application Cost: &quot; &amp; appcst" newline="True"/>
+            <output expression="&quot;Warranty Cost: &quot; &amp; wrrcst" newline="True"/>
+            <output expression="&quot;Total: &quot; &amp; ttl" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

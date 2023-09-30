@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sarak"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-30 08:29:46 AM"/>
+        <attribute name="created" value="c2FyYWs7U0FSQTsyMDIzLTA5LTMwOzA4OjE1OjM0IEFNOzIwOTQ="/>
+        <attribute name="edited" value="c2FyYWs7U0FSQTsyMDIzLTA5LTMwOzA4OjI5OjQ2IEFNOzE7MjIxMA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lstn" type="String" array="False" size=""/>
+            <declare name="dpns" type="Integer" array="False" size=""/>
+            <declare name="grsin" type="Real" array="False" size=""/>
+            <declare name="adjgrsin" type="Integer" array="False" size=""/>
+            <declare name="taxrt" type="Real" array="False" size=""/>
+            <declare name="intax" type="Real" array="False" size=""/>
+            <input variable="lstn"/>
+            <input variable="dpns"/>
+            <input variable="grsin"/>
+            <input variable="taxrt"/>
+            <input variable="adjgrsin"/>
+            <assign variable="adjgrsin" expression="grsin - (dpns * 12000)"/>
+            <if expression="adjgrsin &gt; 50000">
+                <then>
+                    <assign variable="intax" expression="0.20 / 20% taxrt"/>
+                </then>
+                <else>
+                    <assign variable="intax" expression="0.10 / 10% taxrt"/>
+                </else>
+            </if>
+            <assign variable="intax" expression="adjgrsin * intax"/>
+            <if expression="intax &lt; 0">
+                <then>
+                    <assign variable="intax" expression="100"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;Last Name: &quot; &amp; lstn" newline="True"/>
+            <output expression="&quot;Gross Income: $&quot; &amp; grsin" newline="True"/>
+            <output expression="&quot;Dependents: &quot; &amp; dpns" newline="True"/>
+            <output expression="&quot;Adjusted Gross Income: $&quot; &amp; adjgrsin" newline="True"/>
+            <output expression="&quot;Income Tax: $&quot; &amp; intax" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
