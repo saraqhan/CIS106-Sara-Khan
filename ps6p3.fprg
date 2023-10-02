@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sarak"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-01 11:10:49 PM"/>
+        <attribute name="created" value="c2FyYWs7U0FSQTsyMDIzLTEwLTAxOzEwOjU1OjAwIFBNOzIwODk="/>
+        <attribute name="edited" value="c2FyYWs7U0FSQTsyMDIzLTEwLTAxOzExOjEwOjQ5IFBNOzI7MjIwMw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="prnpl" type="Real" array="False" size=""/>
+            <declare name="mat" type="Integer" array="False" size=""/>
+            <declare name="intrt" type="Real" array="False" size=""/>
+            <declare name="intamt" type="Real" array="False" size=""/>
+            <input variable="prnpl"/>
+            <input variable="mat"/>
+            <input variable="intrt"/>
+            <input variable="intamt"/>
+            <if expression="prnpl &gt; 100000 And mat == 5">
+                <then>
+                    <assign variable="intrt" expression="0.06"/>
+                </then>
+                <else>
+                    <if expression="prnpl &gt;= 50000 And prnpl &lt;= 100000 And mat == 10">
+                        <then>
+                            <assign variable="intrt" expression="0.05"/>
+                        </then>
+                        <else>
+                            <if expression="prnpl &gt;= 50000 And prnpl &lt;= 100000 And mat == 5">
+                                <then>
+                                    <assign variable="intrt" expression="0.04"/>
+                                </then>
+                                <else>
+                                    <assign variable="intrt" expression="0.02"/>
+                                </else>
+                            </if>
+                            <assign variable="intamt" expression="prnpl * intrt"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;Principal Amount: $&quot; &amp; prnpl" newline="True"/>
+                    <output expression="&quot;Interest Rate: &quot; &amp; intrt * 100 &amp; &quot;%&quot;" newline="True"/>
+                    <output expression="&quot;Interest Amount for First Year: $&quot; &amp; intamt" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sarak"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-02 06:28:56 PM"/>
+        <attribute name="created" value="c2FyYWs7U0FSQTsyMDIzLTEwLTAyOzA2OjIyOjIzIFBNOzIwOTQ="/>
+        <attribute name="edited" value="c2FyYWs7U0FSQTsyMDIzLTEwLTAyOzA2OjI4OjU2IFBNOzI7MjIxNQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lstn" type="String" array="False" size=""/>
+            <declare name="sal" type="Real" array="False" size=""/>
+            <declare name="joblvl" type="Integer" array="False" size=""/>
+            <declare name="bnsrt" type="Real" array="False" size=""/>
+            <declare name="bns" type="Real" array="False" size=""/>
+            <input variable="lstn"/>
+            <input variable="sal"/>
+            <input variable="joblvl"/>
+            <input variable="bnsrt"/>
+            <input variable="bns"/>
+            <if expression="joblvl &gt;= 10">
+                <then>
+                    <assign variable="bnsrt" expression="0.25"/>
+                </then>
+                <else>
+                    <if expression="joblvl &gt;= 5 And joblvl &lt;= 9">
+                        <then>
+                            <assign variable="bnsrt" expression="0.20"/>
+                        </then>
+                        <else>
+                            <assign variable="bnsrt" expression="0.10"/>
+                        </else>
+                    </if>
+                    <assign variable="bns" expression="sal * bnsrt"/>
+                </else>
+            </if>
+            <output expression="&quot;Last Name: &quot; &amp; lstn" newline="True"/>
+            <output expression="&quot;Bonus: $&quot; &amp; bns" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sarak"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-02 06:22:15 PM"/>
+        <attribute name="created" value="c2FyYWs7U0FSQTsyMDIzLTEwLTAxOzExOjEwOjUxIFBNOzIwODc="/>
+        <attribute name="edited" value="c2FyYWs7U0FSQTsyMDIzLTEwLTAyOzA2OjIyOjE1IFBNOzI7MjIwNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numoft" type="Integer" array="False" size=""/>
+            <declare name="ppt" type="Real" array="False" size=""/>
+            <declare name="ttl" type="Real" array="False" size=""/>
+            <input variable="numoft"/>
+            <input variable="ppt"/>
+            <input variable="ttl"/>
+            <if expression="numoft &gt;= 25">
+                <then>
+                    <assign variable="ppt" expression="50.00"/>
+                </then>
+                <else>
+                    <if expression="numoft &gt;= 10 And numoft &lt;= 24">
+                        <then>
+                            <assign variable="ppt" expression="60.00"/>
+                        </then>
+                        <else>
+                            <if expression="numoft &gt;= 5 And numoft &lt;= 9">
+                                <then>
+                                    <assign variable="ppt" expression="70.00"/>
+                                </then>
+                                <else>
+                                    <assign variable="ppt" expression="75.00"/>
+                                </else>
+                            </if>
+                            <assign variable="ttl" expression="numoft * ppt"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;Number of Tickets: &quot; &amp; numoft" newline="True"/>
+                    <output expression="&quot;Price Per  Tickets: $&quot; &amp; ppt" newline="True"/>
+                    <output expression="&quot;Total Cost: $&quot; &amp; ttl" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

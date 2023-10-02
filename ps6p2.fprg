@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sarak"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-01 10:54:57 PM"/>
+        <attribute name="created" value="c2FyYWs7U0FSQTsyMDIzLTEwLTAxOzEwOjM4OjM2IFBNOzIwOTk="/>
+        <attribute name="edited" value="c2FyYWs7U0FSQTsyMDIzLTEwLTAxOzEwOjU0OjU3IFBNOzQ7MjIxMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ptnum" type="String" array="False" size=""/>
+            <declare name="qty" type="Integer" array="False" size=""/>
+            <declare name="uc" type="Real" array="False" size=""/>
+            <declare name="ttl" type="Real" array="False" size=""/>
+            <input variable="ptnum"/>
+            <input variable="qty"/>
+            <input variable="uc"/>
+            <input variable="ttl"/>
+            <if expression="ptnum == &quot;10&quot;">
+                <then>
+                    <assign variable="uc" expression="1.00"/>
+                </then>
+                <else>
+                    <if expression="ptnum == &quot;99&quot;">
+                        <then>
+                            <assign variable="uc" expression="2.00"/>
+                        </then>
+                        <else>
+                            <if expression="ptnum == &quot;80&quot;">
+                                <then>
+                                    <assign variable="uc" expression="3.00"/>
+                                </then>
+                                <else>
+                                    <assign variable="uc" expression="5.00"/>
+                                </else>
+                            </if>
+                            <assign variable="ttl" expression="qty * uc"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;Part Number: &quot; &amp; ptnum" newline="True"/>
+                    <output expression="&quot;Cost per Unit: $&quot; &amp; uc" newline="True"/>
+                    <output expression="&quot;Total: $&quot; &amp; ttl" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
